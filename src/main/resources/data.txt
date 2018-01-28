@@ -1,0 +1,77 @@
+
+Merge (n:People {name:"蔡成功",image:"caichenggong.png"})
+Merge (n1:People {name:"欧阳青",image:"ouyangqing.png"})
+Merge (n2:People {name:"李达康",image:"lidakang.png"})
+Merge (n3:People {name:"沙瑞金",image:"sharuijin.png"})
+Merge (n4:People {name:"高玉良",image:"gaoyuliang.png"})
+Merge (n5:People {name:"侯亮平",image:"houliangping.png"})
+Merge (n6:People {name:"赵东来",image:"zhaodonglai.png"})
+Merge (n7:People {name:"陆亦可",image:"luyike.png"})
+Merge (n8:People {name:"周正",image:"zhouzheng.png"})
+
+Merge (n110:People {name:"陈海",image:"chenhai.png"})
+Merge (n111:People {name:"祁同伟",image:"qitongwei.png"})
+Merge (n112:People {name:"陈岩石",image:"chenyanshi.png"})
+Merge (n113:People {name:"高小琴",image:"gaoxiaoqin.png"})
+Merge (n114:People {name:"欧阳青",image:"ouyangqing.png"})
+Merge (n115:People {name:"丁义诊",image:"dingyizhen.png"})
+Merge (n116:People {name:"王大路",image:"wangdalu.png"})
+Merge (n117:People {name:"高玉良",image:"gaoyuliang.png"})
+Merge (n118:People {name:"吴慧芬",image:"wuhuifen.png"})
+Merge (n119:People {name:"钟小艾",image:"zhongxiaoai.png"})
+Merge (n1110:People {name:"林华华",image:"linhuahua.png"})
+Merge (n11a:People {name:"王馥真",image:"wangfuzhen.png"})
+Merge (n11v:People {name:"季昌明",image:"jichangming.png"})
+Merge (n11c:People {name:"陈阳",image:"chenyang.png"})
+Merge (n11s:People {name:"梁璐",image:"lianglu.png"})
+Merge (n11w:People {name:"高小琴",image:"gaoxiaoqin.png"})
+Merge (n11d:People {name:"郑西坡",image:"zhenxipo.png"})
+Merge (n11g:People {name:"高小凤",image:"gaoxiaofeng.png"})
+
+
+
+Match (n:People {name:"蔡成功"}),(b:People {name:"欧阳青"}) Merge(n)-[:贿赂]->(b)
+Match (n:People {name:"蔡成功"}),(b:People {name:"侯亮平"}) Merge(n)-[:发小]->(b)
+Match (n:People {name:"欧阳青"}),(b:People {name:"丁义诊"}) Merge(n)-[:合作]->(b)
+Match (n:People {name:"欧阳青"}),(b:People {name:"王大路"}) Merge(n)-[:朋友]->(b)
+Match (n:People {name:"欧阳青"}),(b:People {name:"李达康"}) Merge(n)-[:夫妻]->(b)
+
+Match (n:People {name:"李达康"}),(b:People {name:"王大路"}) Merge(n)-[:前同事]->(b)
+Match (n:People {name:"李达康"}),(b:People {name:"丁义诊"}) Merge(n)-[:下属]->(b)
+Match (n:People {name:"李达康"}),(b:People {name:"高玉良"}) Merge(n)-[:同事]->(b)
+Match (n:People {name:"沙瑞金"}),(b:People {name:"高玉良"}) Merge(n)-[:下属]->(b)
+
+
+Match (n1:People {name:"沙瑞金"}),(b1:People {name:"李达康"}) Merge(n1)-[:下属]->(b1)
+Match (n2:People {name:"沙瑞金"}),(b2:People {name:"祁同伟"}) Merge(n2)-[:下属]->(b2)
+Match (n3:People {name:"高玉良"}),(b3:People {name:"祁同伟"}) Merge(n3)-[:学生]->(b3)
+Match (n4:People {name:"高玉良"}),(b4:People {name:"侯亮平"}) Merge(n4)-[:学生]->(b4)
+
+
+Match (n:People {name:"高玉良"}),(b:People {name:"陈海"})   Merge(n)-[:学生]->(b)
+Match (n:People {name:"高玉良"}),(b:People {name:"吴慧芬"}) Merge(n)-[:夫妻]->(b)
+Match (n:People {name:"侯亮平"}),(b:People {name:"钟小艾"}) Merge(n)-[:夫妻]->(b)
+Match (n:People {name:"侯亮平"}),(b:People {name:"陈海"})   Merge(n)-[:同学]->(b)
+
+
+Match (n:People {name:"侯亮平"}),(b:People {name:"陆亦可"}) Merge(n)-[:下属]->(b)
+Match (n:People {name:"侯亮平"}),(b:People {name:"赵东来"}) Merge(n)-[:办案]->(b)
+Match (n:People {name:"赵东来"}),(b:People {name:"陆亦可"}) Merge(n)-[:喜欢]->(b)
+Match (n:People {name:"陆亦可"}),(b:People {name:"陈海"})   Merge(n)-[:喜欢]->(b)
+
+Match (n:People {name:"陆亦可"}),(b:People {name:"周正"})   Merge(n)-[:下属]->(b)
+Match (n:People {name:"陆亦可"}),(b:People {name:"林华华"}) Merge(n)-[:下属]->(b)
+Match (n:People {name:"周正"}),(b:People {name:"林华华"})   Merge(n)-[:情侣]->(b)
+Match (n:People {name:"陈海"}),(b:People {name:"陈岩石"})   Merge(n)-[:父亲]->(b)
+
+Match (n:People {name:"陈海"}),(b:People {name:"王馥真"})   Merge(n)-[:母亲]->(b)
+Match (n:People {name:"陈海"}),(b:People {name:"季昌明"})   Merge(n)-[:上级]->(b)
+Match (n:People {name:"陈海"}),(b:People {name:"陈阳"}) Merge(n)-[:姐姐]->(b)
+Match (n:People {name:"祁同伟"}),(b:People {name:"陈阳"})   Merge(n)-[:初恋]->(b)
+
+
+Match (n:People {name:"祁同伟"}),(b:People {name:"梁璐"})   Merge(n)-[:夫妻]->(b)
+Match (n:People {name:"祁同伟"}),(b:People {name:"高小琴"}) Merge(n)-[:情妇]->(b)
+Match (n:People {name:"陈岩石"}),(b:People {name:"郑西坡"}) Merge(n)-[:前下属]->(b)
+Match (n:People {name:"高小琴"}),(b:People {name:"高小凤"}) Merge(n)-[:姐妹]->(b)
+
